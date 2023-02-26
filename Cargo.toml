@@ -3,10 +3,16 @@ name = "mapillary-seq-cleanup"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
+repository = "https://github.com/littlebtc/mapillary-seq-cleanup"
+readme = "README.md"
 keywords = ["mapillary"]
 categories = ["command-line-utilities"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+path = "src/main.rs"
+name = "mapillary_seq_cleanup"
 
 [dependencies]
 anyhow = "1.0"

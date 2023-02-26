@@ -13,7 +13,7 @@ const TIME_FORMAT: &str = "%Y_%m_%d_%H_%M_%S_%3f";
 
 #[derive(Parser, Debug)]
 struct Cli {
-    /// Time zone used to convert timestamps to UTC
+    /// Time zone used to convert timestamps to UTC e.g. Asia/Taipei
     #[arg(long, default_value_t = Tz::UTC, value_parser=timezone_parser)]
     timezone: Tz,
 
@@ -30,7 +30,7 @@ struct Cli {
     #[arg(long="max_sequence_length", default_value_t = 200, value_parser=clap::value_parser!(u64).range(1..))]
     max_sequence_length: u64,
 
-    /// Path to the mapillary_image_description.json.
+    /// Path to the images and mapillary_image_description.json.
     #[arg(value_hint = clap::ValueHint::DirPath)]
     path: PathBuf,
 }
