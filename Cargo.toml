@@ -1,0 +1,18 @@
+[package]
+name = "mapillary-seq-cleanup"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+keywords = ["mapillary"]
+categories = ["command-line-utilities"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0", features = ["preserve_order"] }
+clap = { version = "4.1", features = ["derive"] }
+chrono = "0.4"
+chrono-tz = "0.8"
+geo = "0.23"
