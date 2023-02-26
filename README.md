@@ -18,8 +18,8 @@ cargo install mapillary-seq-cleanup
 Assume you have installed `mapillary_tools`, for all images stored in `gptodo`, Process the image description file between the process and upload steps:
 
 ```sh
-mapillary_tools process gptodo --interpolate_directions --skip_process_errors & \
-mapillary_seq_cleanup -z "Asia/Taipei" gptodo & \
+mapillary_tools process gptodo --interpolate_directions --skip_process_errors && \
+mapillary_seq_cleanup --timezone "Asia/Taipei" gptodo && \
 mapillary_tools upload gptodo
 ```
 
