@@ -1,5 +1,6 @@
 [package]
 name = "mapillary-seq-cleanup"
+description = "A simple tool to clean mapillary_tools proceeded GoPro timelapse images."
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
@@ -7,6 +8,7 @@ repository = "https://github.com/littlebtc/mapillary-seq-cleanup"
 readme = "README.md"
 keywords = ["mapillary"]
 categories = ["command-line-utilities"]
+exclude = [".gitignore"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
