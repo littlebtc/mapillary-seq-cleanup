@@ -88,6 +88,7 @@ fn main() -> Result<(), anyhow::Error> {
                 .context("Datetime parse error")?,
             TIME_FORMAT,
         )?;
+        image["MAPCaptureTime"] = json!(format!("{}", time.with_timezone(&Utc).format(TIME_FORMAT)));
         if let (Some(prev_point), Some(prev_time)) = (prev_point, prev_time) {
             if point.geodesic_distance(&prev_point) < cli.duplicate_distance {
                 image.clear();
@@ -100,7 +101,6 @@ fn main() -> Result<(), anyhow::Error> {
                     seq_id += 1;
                     seq_len = 0;
                 }
-                image["MAPCaptureTime"] = json!(format!("{}", time.with_timezone(&Utc).format(TIME_FORMAT)));
                 image["MAPSequenceUUID"] = json!(seq_id.to_string());
                 seq_len += 1;
             }
